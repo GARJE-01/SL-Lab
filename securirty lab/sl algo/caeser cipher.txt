@@ -1,0 +1,8 @@
+1.Input the Plaintext: The algorithm takes a string of text (plaintext) that needs to be encrypted.
+2.Determine the Shift: A fixed integer value, called the shift (or key), indicates how many positions each letter will be shifted in the alphabet.
+3.Iterate Over Each Character:
+	If the character is an uppercase letter (A-Z), calculate its new position by applying the shift, and wrap around if necessary.
+	If the character is a lowercase letter (a-z), do the same as for uppercase letters.
+	If the character is not a letter (e.g., space, punctuation), leave it unchanged.
+4.Build the Result: Construct the resulting ciphertext by appending the shifted characters.
+5.Return the Result: Finally, return the resulting ciphertext.

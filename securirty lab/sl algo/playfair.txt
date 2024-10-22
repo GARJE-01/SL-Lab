@@ -1,0 +1,35 @@
+Step 1: Key Table Generation
+1.Input: A keyword (key) for generating the key table.
+2.Normalize the Key:
+	Convert the key to lowercase.
+	Replace all occurrences of 'j' with 'i'.
+	Remove spaces from the key.
+	Remove duplicate letters while preserving the order of appearance.
+3.Prepare the Alphabet: Create a string of the alphabet without 'j': "abcdefghiklmnopqrstuvwxyz".
+4.Generate Key Table:
+	Start with the unique characters from the normalized key.
+	Add the remaining letters of the alphabet that are not already in the key.
+5.Output: A 5x5 key table represented as a 2D array (matrix).
+Step 2: Locate Letters in the Key Table
+1.Input: Two characters (a and b) from the ciphertext.
+2.Adjust for 'j': Convert 'j' to 'i' if either character is 'j'.
+3.Find Positions:
+	Use the key table to find the row and column indices of both characters.
+4.Output: The positions of the two characters in the form of coordinates: (row1, column1) and (row2, column2).
+Step 3: Decrypting the Ciphertext
+1.Input: The ciphertext and the key used to generate the key table.
+2.Generate Key Table: Call the generate_key_table function with the key to create the 5x5 matrix.
+3.Initialize a List: Create an empty list to store the decrypted characters.
+4.Process the Ciphertext:
+	Iterate through the ciphertext in pairs of characters (digraphs).
+	For each pair (cipher[i], cipher[i+1]):
+		Call the search function to find their positions in the key table.
+		Apply the decryption rules based on their positions:
+			Same Row: Replace each letter with the letter to its immediate left (wrap around if necessary).
+			Same Column: Replace each letter with the letter directly above it (wrap around if necessary).
+			Rectangle Swap: If the letters form a rectangle, swap the columns.
+5.Output the Decrypted Message: Join the list of decrypted characters into a string.
+Step 4: Main Execution
+1.Input: Define the key (e.g., "Monarchy") and the ciphertext (e.g., "gatlmzclrqtx").
+2.Decrypt the Ciphertext: Call the decrypt function with the ciphertext and the key.
+3.Display the Result: Print the deciphered text.

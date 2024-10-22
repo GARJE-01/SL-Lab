@@ -1,0 +1,50 @@
+Algorithm for RSA Encryption and Decryption
+Step 1: Define the GCD Function
+Function Definition: Create a function named gcd that takes two integers, a and b.
+Loop until b is zero:
+Use the Euclidean algorithm to calculate the greatest common divisor (GCD):
+Update a to b and b to a % b.
+Return: When b is zero, return a (the GCD).
+Step 2: Define the Modular Inverse Function
+Function Definition: Create a function named mod_inverse that takes two integers, e (public exponent) and phi (Euler's Totient).
+Loop through possible values of d:
+For each integer d from 1 to phi - 1, check if the condition (e * d) % phi == 1 holds.
+Return: If found, return d, which is the modular inverse of e modulo phi.
+Step 3: Generate RSA Keys
+Function Definition: Create a function named generate_keys.
+Choose Two Prime Numbers:
+Set p = 61 and q = 53.
+Calculate Modulus:
+Compute n = p * q.
+Calculate Euler's Totient:
+Compute phi = (p - 1) * (q - 1).
+Choose Public Exponent:
+Set e = 17 (public exponent).
+Calculate Private Exponent:
+Call mod_inverse(e, phi) to calculate d.
+Return: Return the public key (e, n) and the private key (d, n).
+Step 4: Encrypt the Message
+Function Definition: Create a function named encrypt that takes the message and public_key.
+Extract Public Key:
+Get e and n from public_key.
+Encrypt Each Character:
+For each character in the message, calculate the encrypted value using the formula (ord(char) ** e) % n.
+Return: Return the list of encrypted integers.
+Step 5: Decrypt the Message
+Function Definition: Create a function named decrypt that takes the cipher (encrypted message) and private_key.
+Extract Private Key:
+Get d and n from private_key.
+Decrypt Each Character:
+For each integer in the cipher, calculate the original character using (char ** d) % n and convert it back to a character using chr().
+Return: Join the characters to form the decrypted message and return it.
+Step 6: Example Usage
+Generate RSA Keys:
+Call generate_keys() to obtain public_key and private_key.
+Set Message:
+Define the message as "HELLO".
+Encrypt the Message:
+Call encrypt(message, public_key) to get the encrypted result.
+Decrypt the Encrypted Message:
+Call decrypt(encrypted, private_key) to get the decrypted result.
+Print Results:
+Print the original message, the encrypted message, and the decrypted message.

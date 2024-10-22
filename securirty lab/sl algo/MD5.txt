@@ -1,0 +1,17 @@
+Algorithm for MD5 Hash Calculation
+Step 1: Import the hashlib Module
+Import: Import the hashlib module to utilize hashing functions.
+Step 2: Define the Input String
+Input String: Set the variable inputstring to the desired string value, e.g., "Mayur".
+Step 3: Encode the Input String
+Encoding: Convert the input string to bytes using the encode() method. This prepares the string for hashing, as hashing functions work with byte data.
+Step 4: Compute the MD5 Hash
+Hash Calculation:
+Use hashlib.md5() to create an MD5 hash object, passing the encoded byte string as an argument.
+This initializes the hashing process and computes the hash value.
+Step 5: Generate the Hash Digest
+Hash Digest:
+Call the hexdigest() method on the hash object to retrieve the hash value as a hexadecimal string.
+This produces a string representation of the MD5 hash.
+Step 6: Output the Result
+Print Output: Display the resulting MD5 hash by printing it to the console.

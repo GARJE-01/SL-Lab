@@ -1,0 +1,27 @@
+Algorithm for DES Encryption and Decryption
+Step 1: Import Required Libraries
+Import Libraries: Import the DES class from Crypto.Cipher and the pad and unpad functions from Crypto.Util.Padding.
+Step 2: Define Key and Cipher
+Define Key: Set a byte string key for the DES encryption, e.g., key = b'abcdefgh'. The key must be exactly 8 bytes long.
+Create Cipher Object: Initialize the DES cipher in CBC mode using the defined key:
+cipher = DES.new(key, DES.MODE_CBC).
+Step 3: Prepare Plaintext
+Define Plaintext: Create a byte string plaintext that you want to encrypt, e.g., plaintext = b'This is a test.'.
+Step 4: Pad the Plaintext
+Padding: Use the pad() function to ensure that the plaintext length is a multiple of the DES block size (8 bytes):
+pad(plaintext, DES.block_size).
+Step 5: Encrypt the Plaintext
+Encrypt: Call the encrypt() method on the cipher object with the padded plaintext to produce the ciphertext:
+ciphertext = cipher.encrypt(padded_plaintext).
+Step 6: Create a New Cipher for Decryption
+Create Decryptor: Initialize a new DES cipher object for decryption, using the same key and the IV (Initialization Vector) generated during encryption:
+decipher = DES.new(key, DES.MODE_CBC, cipher.iv).
+Step 7: Decrypt the Ciphertext
+Decrypt: Call the decrypt() method on the decryptor with the ciphertext:
+decrypted = decipher.decrypt(ciphertext).
+Step 8: Unpad the Decrypted Data
+Unpadding: Use the unpad() function to remove the padding from the decrypted data:
+unpad(decrypted, DES.block_size).
+Step 9: Output the Result
+Print Ciphertext: Display the ciphertext.
+Print Decrypted Text: Decode the decrypted byte string back to UTF-8 and print it.

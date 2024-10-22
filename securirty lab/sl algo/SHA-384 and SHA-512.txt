@@ -1,0 +1,24 @@
+Step 1: Import the Hashing Library
+Import: Begin by importing the hashlib library, which provides the functions needed to create hash digests.
+Step 2: Define the SHA-384 Hashing Function
+1.Function Definition: Create a function named sha384_hash that takes a single parameter, message.
+2.Encoding the Message:
+Encode the input message as a byte string using encode().
+3.Calculate SHA-384 Hash:
+	Use hashlib.sha384() to create a SHA-384 hash object.
+	Call the hexdigest() method on the hash object to get the hash digest in hexadecimal format.
+4.Return Value: Return the hexadecimal digest.
+Step 3: Define the SHA-512 Hashing Function
+1.Function Definition: Create a function named sha512_hash that also takes a single parameter, message.
+2.Encoding the Message:
+	Similar to the previous function, encode the input message using encode().
+3.Calculate SHA-512 Hash:
+	Use hashlib.sha512() to create a SHA-512 hash object.
+	Call the hexdigest() method to get the hexadecimal digest.
+4.Return Value: Return the hexadecimal digest.
+Step 4: Main Execution
+1.Input Message: Prompt the user to input a message using input().
+2.Call Hash Functions:
+		Call the sha384_hash function with the user-provided message and store the result.
+		Call the sha512_hash function with the same message and store the result.
+3.Output the Hashes: Print the results for both SHA-384 and SHA-512 hashes.

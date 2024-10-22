@@ -1,0 +1,89 @@
+Algorithm for Diffie-Hellman Key Exchange
+Step 1: Define Public Parameters
+Choose a Prime Number (p):
+Set 
+𝑝
+=
+23
+p=23 (a prime number).
+Choose a Primitive Root (g):
+Set 
+𝑔
+=
+5
+g=5 (the base or generator).
+Step 2: Alice's Key Generation
+Alice's Private Key:
+Set Alice’s private key: alice_private = 6 (a secret value known only to Alice).
+Alice's Public Key Calculation:
+Compute Alice's public key using the formula:
+alice_public
+=
+𝑔
+alice_private
+m
+o
+d
+ 
+ 
+𝑝
+alice_public=g 
+alice_private
+ modp
+Store the result.
+Step 3: Bob's Key Generation
+Bob's Private Key:
+Set Bob’s private key: bob_private = 15 (a secret value known only to Bob).
+Bob's Public Key Calculation:
+Compute Bob's public key using the formula:
+bob_public
+=
+𝑔
+bob_private
+m
+o
+d
+ 
+ 
+𝑝
+bob_public=g 
+bob_private
+ modp
+Store the result.
+Step 4: Shared Secret Calculation
+Alice's Shared Secret:
+Compute Alice's shared secret using Bob's public key:
+alice_shared
+=
+bob_public
+alice_private
+m
+o
+d
+ 
+ 
+𝑝
+alice_shared=bob_public 
+alice_private
+ modp
+Bob's Shared Secret:
+Compute Bob's shared secret using Alice's public key:
+bob_shared
+=
+alice_public
+bob_private
+m
+o
+d
+ 
+ 
+𝑝
+bob_shared=alice_public 
+bob_private
+ modp
+Step 5: Verify Shared Secrets
+Output the Shared Secrets:
+Print Alice's shared secret and Bob's shared secret.
+Check Equality:
+Verify that the shared secrets match by comparing alice_shared and bob_shared.
+Print the result of the comparison.
